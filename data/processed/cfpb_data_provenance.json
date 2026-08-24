@@ -1,0 +1,35 @@
+{
+  "counts": {
+    "cleaned_pool": 4555,
+    "discarded": {
+      "duplicate_narrative": 1445
+    },
+    "processed_sample": 3000,
+    "raw_retrieved": 6000
+  },
+  "outputs": {
+    "processed_csv": {
+      "path": "data/processed/cfpb_cleaned_3000.csv",
+      "sha256": "3e671f88247cdda06b348e7c996a4bb8effe00169cc668d43cdc21fc7c56e75a"
+    },
+    "raw_csv": {
+      "path": "data/raw/cfpb_complaints_2022_2025.csv",
+      "sha256": "de4b48359018309b47aa20a2846031b9491f7bd0dc57596c1bf51520d8e98334"
+    }
+  },
+  "request": {
+    "date_received_max": "2025-12-31",
+    "date_received_min": "2022-01-01",
+    "final_sample_size": 3000,
+    "has_narrative": true,
+    "initial_target": 6000,
+    "page_size": 100,
+    "seed": 20260806
+  },
+  "retrieved_at_utc": "2026-08-06T14:22:34.917229+00:00",
+  "source": {
+    "endpoint": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/",
+    "query_url": "https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/?date_received_min=2022-01-01&date_received_max=2025-12-31&has_narrative=true&size=100&sort=created_date_desc&no_aggs=true&frm=0"
+  },
+  "status": "complete"
+}

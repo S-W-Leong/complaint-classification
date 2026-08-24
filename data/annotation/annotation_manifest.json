@@ -1,0 +1,9 @@
+{
+  "annotator_a_count": 1300,
+  "annotator_b_count": 1300,
+  "pilot_count": 400,
+  "seed": 20260809,
+  "source_path": "data/processed/cfpb_cleaned_3000.csv",
+  "source_row_count": 3000,
+  "source_sha256": "3e671f88247cdda06b348e7c996a4bb8effe00169cc668d43cdc21fc7c56e75a"
+}
