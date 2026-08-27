@@ -1,6 +1,6 @@
 # Consumer Complaint Urgency Classification Using Natural Language Processing
 
-An academic NLP project that classifies Consumer Financial Protection Bureau (CFPB) complaint narratives as **Low**, **Medium**, or **High** urgency. It compares three TF-IDF-based classical models with a chunked DistilBERT classifier, then demonstrates human-led triage in a Streamlit complaint-operations prototype.
+An academic NLP project that classifies Consumer Financial Protection Bureau (CFPB) complaint narratives as **Low**, **Medium**, or **High** urgency. It compares three TF-IDF-based classical models with a chunked DistilBERT classifier, then demonstrates human-led triage in a Streamlit complaint-operations prototype. The full documentation can be found in [here](docs/AI_Assignment_Full_Report.pdf) along with its [OriginalityReport](docs/Originality-Report.pdf). 
 
 ## Contents
 
@@ -44,8 +44,6 @@ See the [test-metric comparison](data/reports/figures/phase6_test_metric_compari
 
 ## How the system works
 
-![Urgency-classification workflow](docs/urgency-classification-flow.jpg)
-
 1. Retrieve published CFPB complaint narratives and retain reproducibility metadata.
 2. Remove duplicate narratives and create a seeded, 3,000-record sample.
 3. Apply the documented Low/Medium/High urgency guide; record annotation agreement, uncertainty, and adjudication.
@@ -68,12 +66,15 @@ The source is the official [CFPB Consumer Complaint Database](https://www.consum
 
 The dataset has no official urgency target. Labels in this study are **AI-generated research annotations**, produced by two independent AI annotators under a written guide—not CFPB findings, expert judgments, or ground truth. The workflow records a 400-record pilot (Cohen’s kappa 0.4278), guide refinement, and a 67-record calibration round (kappa 0.7485), followed by uncertainty review and adjudication.
 
-The final class distribution is imbalanced: 290 Low (9.67%), 2,148 Medium (71.60%), and 562 High (18.73%). The [annotation guide](docs/urgency-annotation-guide.md), [provenance record](data/processed/cfpb_data_provenance.json), [annotation manifest](data/annotation/annotation_manifest.json), and [split manifest](data/splits/split_manifest.json) support traceability.
+The final class distribution is imbalanced: 290 Low (9.67%), 2,148 Medium (71.60%), and 562 High (18.73%). The [annotation guide](data/annotation/urgency-annotation-guide.md), [provenance record](data/processed/cfpb_data_provenance.json), [annotation manifest](data/annotation/annotation_manifest.json), and [split manifest](data/splits/split_manifest.json) support traceability.
 
 ## Repository guide
 
 | Path | Purpose |
 | --- | --- |
+| `docs/AI_Assignment_Full_Report.pdf` | Full project documentation. |
+| `docs/Originality-Report.pdf` | Originality report associated with project documentation. |
+| `docs/AI-Asgmt-Presentation-Deck.pdf` | Originality report associated with project documentation. |
 | `src/text_preprocessing.py` | Shared classical-text normalisation. |
 | `src/prototype_inference.py` | Loading and inference helpers for the frozen DistilBERT model. |
 | `src/complaint_operations.py` | Synthetic case-queue and workspace logic. |
@@ -81,6 +82,7 @@ The final class distribution is imbalanced: 290 Low (9.67%), 2,148 Medium (71.60
 | `streamlit_app.py` | Streamlit complaint-operations prototype. |
 | `data/` | Source subset, processed/labeled data, annotation evidence, split IDs, reports, and figures. |
 | `artifacts/` | Frozen vectorizer and selected model artifacts. |
+
 
 ## Getting started
 
@@ -167,8 +169,6 @@ py -m streamlit run streamlit_app.py
 ```
 
 The prototype opens to a populated **synthetic** complaint queue. You can search and filter cases, open a case workspace, record session-only notes and status changes, and add a new synthetic complaint. A valid new narrative is automatically triaged with the frozen DistilBERT artifact at `artifacts/models/distilbert`; the app can also show an on-demand local explanation.
-
-![Synthetic complaint queue](docs/screenshots/prototype/figure17-complaint-queue.png)
 
 Key safeguards:
 
