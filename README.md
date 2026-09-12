@@ -72,9 +72,7 @@ The final class distribution is imbalanced: 290 Low (9.67%), 2,148 Medium (71.60
 
 | Path | Purpose |
 | --- | --- |
-| `docs/AI_Assignment_Full_Report.pdf` | Full project documentation. |
-| `docs/Originality-Report.pdf` | Originality report associated with project documentation. |
-| `docs/AI-Asgmt-Presentation-Deck.pdf` | Originality report associated with project documentation. |
+| `docs/full-documentation.pdf` | Full project documentation. |
 | `src/text_preprocessing.py` | Shared classical-text normalisation. |
 | `src/prototype_inference.py` | Loading and inference helpers for the frozen DistilBERT model. |
 | `src/complaint_operations.py` | Synthetic case-queue and workspace logic. |
