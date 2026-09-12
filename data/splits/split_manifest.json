@@ -1,0 +1,28 @@
+{
+  "class_counts": {
+    "test": {
+      "High": 85,
+      "Low": 43,
+      "Medium": 322
+    },
+    "train": {
+      "High": 393,
+      "Low": 203,
+      "Medium": 1504
+    },
+    "validation": {
+      "High": 84,
+      "Low": 44,
+      "Medium": 322
+    }
+  },
+  "seed": 20260815,
+  "source_path": "/Users/leongshiwei/ShiWei_Local_Mac/1_Projects/Local_RDS_Y2S1/AI-Asgmt/data/processed/cfpb_labeled_3000_3e671f88247c-ai-v2.csv",
+  "source_sha256": "0e172b586d0febe638af85e864d07dc85455077f1b3410aed652d10e2e60ec22",
+  "split_counts": {
+    "test": 450,
+    "train": 2100,
+    "validation": 450
+  },
+  "stratify_column": "urgency_label"
+}

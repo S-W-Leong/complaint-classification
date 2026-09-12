@@ -1,0 +1,339 @@
+:root {
+  --ops-navy: #0f1f36;
+  --ops-coral: #d13b38;
+  --ops-coral-soft: #fff0ef;
+  --ops-ink: #16233a;
+  --ops-muted: #647084;
+  --ops-line: #e3e7ed;
+  --ops-surface: #fbfaf8;
+}
+
+[data-testid="stSidebar"] {
+  display: none !important;
+}
+
+[data-testid="stHeader"] {
+  display: none;
+}
+
+/* Stable app-owned hover rail. Keeping the rail in the main layout avoids
+   Streamlit's native collapsed-sidebar transform and preserves icon placement. */
+.st-key-hover_sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: 3.5rem;
+  min-width: 3.5rem;
+  max-width: 3.5rem;
+  padding: 1rem 0.5rem;
+  overflow: hidden;
+  background: var(--ops-navy);
+  transition: max-width 180ms ease, min-width 180ms ease, width 180ms ease;
+}
+
+.st-key-hover_sidebar:hover {
+  width: 14rem;
+  min-width: 14rem;
+  max-width: 14rem;
+  overflow: visible;
+}
+
+.st-key-hover_sidebar [data-testid="stMarkdownContainer"],
+.st-key-hover_sidebar [data-testid="stMarkdownContainer"] p,
+.st-key-hover_sidebar [data-testid="stMarkdownContainer"] strong,
+.st-key-hover_sidebar [data-testid="stCaptionContainer"],
+.st-key-hover_sidebar [data-testid="stCaptionContainer"] p,
+.st-key-hover_sidebar h3,
+.st-key-hover_sidebar h3 span {
+  color: #f7f8fb;
+}
+
+.st-key-hover_sidebar .stButton > button {
+  background: transparent;
+  border-color: transparent;
+  color: #f7f8fb;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.st-key-hover_sidebar .stButton > button p,
+.stButton > button p {
+  color: inherit;
+}
+
+.st-key-hover_sidebar .stButton > button:hover,
+.st-key-hover_sidebar .stButton > button:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.st-key-hover_sidebar:not(:hover) .stButton > button {
+  justify-content: center;
+  overflow: hidden;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.st-key-hover_sidebar:not(:hover) .stButton > button p {
+  display: none;
+}
+
+.st-key-hover_sidebar:not(:hover) [data-testid="stIconMaterial"],
+.st-key-hover_sidebar:not(:hover) [data-testid="stImageIcon"] {
+  display: inline-flex;
+  flex: 0 0 auto;
+  opacity: 1;
+  visibility: visible;
+}
+
+.st-key-hover_sidebar:not(:hover) h3,
+.st-key-hover_sidebar:not(:hover) [data-testid="stCaptionContainer"] {
+  visibility: hidden;
+}
+
+.st-key-hover_sidebar hr {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+[data-testid="stAppViewContainer"] {
+  background: var(--ops-surface);
+}
+
+.block-container {
+  max-width: 1440px;
+  padding: 1.25rem 2rem 2rem;
+}
+
+[data-testid="stMain"] h1,
+[data-testid="stMain"] h1 span,
+[data-testid="stMain"] h2,
+[data-testid="stMain"] h2 span,
+[data-testid="stMain"] h3,
+[data-testid="stMain"] h3 span,
+[data-testid="stMain"] [data-testid="stMarkdownContainer"] > p,
+[data-testid="stMetricLabel"] {
+  color: var(--ops-ink);
+}
+
+[data-testid="stCaptionContainer"],
+[data-testid="stCaptionContainer"] p {
+  color: var(--ops-muted);
+}
+
+[data-testid="stMain"] [data-testid="stCaptionContainer"] p {
+  color: var(--ops-muted) !important;
+}
+
+[data-testid="stMain"] [data-testid="stCaptionContainer"] {
+  opacity: 1;
+}
+
+[data-testid="stMain"] .stButton > button p {
+  color: inherit;
+}
+
+[data-testid="stMain"] h1 {
+  font-size: 1.9rem;
+  line-height: 1.2;
+  padding: 0.75rem 0 0.5rem;
+}
+
+[data-testid="stMain"] h3 {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.35;
+  padding: 0.35rem 0 0.25rem;
+}
+
+.stButton > button {
+  border-radius: 0.35rem;
+}
+
+/* The queue action column is intentionally compact, but its icon and label
+   must stay together at the browser's default zoom level. */
+[data-testid="stMain"] [class*="st-key-open_"] button,
+[data-testid="stMain"] [class*="st-key-open_"] button p {
+  white-space: nowrap;
+}
+
+[data-testid="stMain"] .stButton > button[kind="secondary"] {
+  background: #ffffff;
+  border-color: #cfd5df;
+  color: var(--ops-ink);
+}
+
+[data-testid="stMain"] .stButton button[kind="secondary"] {
+  background: #ffffff;
+  border-color: #cfd5df;
+  color: var(--ops-ink);
+}
+
+[data-testid="stMain"] .stButton > button[kind="secondary"]:disabled {
+  background: #f3f4f6;
+  border-color: var(--ops-line);
+  color: var(--ops-muted);
+}
+
+.stButton > button[kind="primary"] {
+  background: var(--ops-coral);
+  border-color: var(--ops-coral);
+  color: #ffffff;
+}
+
+[data-testid="stMain"] .st-key-mark_in_review .stButton > button {
+  border-color: var(--ops-coral);
+  color: var(--ops-coral);
+}
+
+[data-testid="stMain"] .st-key-mark_in_review .stButton > button,
+[data-testid="stMain"] .st-key-escalate_case .stButton > button {
+  width: 100%;
+}
+
+[data-testid="stMain"] .st-key-mark_in_review .stButton button,
+[data-testid="stMain"] .st-key-escalate_case .stButton button {
+  width: 100% !important;
+}
+
+[data-testid="stMain"] .st-key-mark_in_review [data-testid="stButton"],
+[data-testid="stMain"] .st-key-escalate_case [data-testid="stButton"] {
+  width: 100%;
+}
+
+[data-testid="stMain"] .st-key-mark_in_review button,
+[data-testid="stMain"] .st-key-escalate_case button {
+  width: 100% !important;
+}
+
+[data-testid="stMain"] .st-key-mark_in_review,
+[data-testid="stMain"] .st-key-escalate_case {
+  width: 100% !important;
+}
+
+[data-testid="stMain"] .react-aria-ComboBox > [role="group"],
+[data-testid="stMain"] .react-aria-TextField > div,
+[data-testid="stMain"] .stTextArea > div {
+  background: #ffffff;
+  border-color: #cfd5df;
+}
+
+[data-testid="stMain"] .react-aria-ComboBox input,
+[data-testid="stMain"] .react-aria-ComboBox button,
+[data-testid="stMain"] .react-aria-TextField input,
+[data-testid="stMain"] textarea {
+  color: var(--ops-ink);
+}
+
+[data-testid="stMain"] .react-aria-ComboBox input::placeholder,
+[data-testid="stMain"] .react-aria-TextField input::placeholder,
+[data-testid="stMain"] textarea::placeholder {
+  color: var(--ops-muted);
+  opacity: 1;
+}
+
+[data-testid="stVerticalBlockBorderWrapper"],
+.st-key-ai_guidance[data-testid="stVerticalBlock"] {
+  background: #ffffff;
+  border-color: var(--ops-line);
+}
+
+.st-key-ai_guidance[data-testid="stVerticalBlock"] {
+  gap: 0.6rem;
+}
+
+[data-testid="stDivider"] {
+  background: var(--ops-line);
+}
+
+[data-testid="stMain"] hr {
+  border-color: var(--ops-line);
+  margin: 0;
+}
+
+.queue-heading {
+  color: var(--ops-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 1.2rem 0 0.2rem;
+  text-transform: uppercase;
+}
+
+.priority {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 650;
+  padding: 0.16rem 0.55rem;
+}
+
+.priority-high {
+  background: var(--ops-coral-soft);
+  color: #b42318;
+}
+
+.priority-medium {
+  background: #eef4fb;
+  color: #24567a;
+}
+
+.priority-low {
+  background: #edf6ef;
+  color: #26623c;
+}
+
+@media (max-width: 900px) {
+  .block-container {
+    padding: 1rem;
+  }
+
+  [data-testid="stHorizontalBlock"] {
+    flex-wrap: wrap;
+  }
+
+  [data-testid="stHorizontalBlock"] > [data-testid="stColumn"] {
+    min-width: 100%;
+  }
+
+  .queue-heading {
+    display: none;
+  }
+}
+
+/* Rail overrides must come after Streamlit's generic button rules. */
+.st-key-hover_sidebar .stButton > button,
+.st-key-hover_sidebar .stButton > button[kind="secondary"],
+.st-key-hover_sidebar .stButton > button[kind="primary"] {
+  background: var(--ops-navy) !important;
+  border-color: transparent !important;
+  color: #f7f8fb !important;
+}
+
+.st-key-hover_sidebar .stButton > button p,
+.st-key-hover_sidebar [data-testid="stMarkdownContainer"] p,
+.st-key-hover_sidebar [data-testid="stMarkdownContainer"] strong {
+  color: #f7f8fb !important;
+}
+
+.st-key-hover_sidebar:not(:hover) [data-testid="stMarkdownContainer"] p {
+  display: none;
+}
+
+/* The hover rail lives inside Streamlit's main block. Match that wrapper from
+   the document root so its padding changes with the rail instead of being
+   covered by the fixed-position navigation. */
+body:has(.st-key-hover_sidebar) [data-testid="stMainBlockContainer"] {
+  box-sizing: border-box !important;
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding-left: calc(3.5rem + 1.25rem) !important;
+  transition: padding-left 180ms ease;
+}
+
+body:has(.st-key-hover_sidebar:hover) [data-testid="stMainBlockContainer"] {
+  padding-left: calc(14rem + 1.25rem) !important;
+}
